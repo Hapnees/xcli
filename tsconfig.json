@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES6",
+    "lib": ["ES6"],
+    "module": "ES6",
+    "rootDir": "src",
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "outDir": "bin",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "sourceMap": true, // creates map files for our source code
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*", "index.d.ts"],
+  "exclude": ["node_modules"],
+  "lib": ["esnext"],
+  "ts-node": {
+    "esm": true
+  }
+}
