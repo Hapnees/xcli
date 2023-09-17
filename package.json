@@ -1,14 +1,14 @@
 {
   "name": "xcli-fsd",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "bin": {
     "xcli-fsd": "index.js"
   },
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-     "build": "rm -rf ./bin && npx tsc",
+    "build": "rm -rf ./bin && npx tsc",
     "start": "node ./bin/index.js",
     "prettier": "npx prettier --write ./bin/**/*.js"
   },

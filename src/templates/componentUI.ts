@@ -1,7 +1,7 @@
 export const componentUITemplate = (
-  componentName: string
+  componentName: string,
 ) => `import { FC } from 'react';
-import styles './${componentName}.module.scss';
+import styles from './${componentName}.module.scss';
 
 interface I${componentName}Props {};
 
