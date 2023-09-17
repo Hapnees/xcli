@@ -1,9 +1,16 @@
 {
-  "name": "xcli",
+  "name": "xcli-fsd",
   "type": "module",
+  "version": "0.0.8",
+  "bin": {
+    "xcli-fsd": "index.js"
+  },
+  "main": "index.js",
+  "license": "ISC",
   "scripts": {
-    "build": "rm -rf ./bin && npx tsc",
-    "start": "node ./bin/index.js"
+     "build": "rm -rf ./bin && npx tsc",
+    "start": "node ./bin/index.js",
+    "prettier": "npx prettier --write ./bin/**/*.js"
   },
   "dependencies": {
     "chalk": "^5.3.0",
@@ -12,6 +19,22 @@
   "devDependencies": {
     "@types/node": "^20.6.0",
     "@types/readline-sync": "^1.4.4",
+    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hapnees/xcli.git"
+  },
+  "keywords": [
+    "CLI",
+    "FSD",
+    "SCRIPT"
+  ],
+  "author": "Hapnees",
+  "bugs": {
+    "url": "https://github.com/Hapnees/xcli/issues"
+  },
+  "homepage": "https://github.com/Hapnees/xcli#readme",
+  "description": ""
 }
