@@ -1,26 +1,34 @@
 {
   "name": "xcli-fsd",
-  "type": "module",
-  "version": "0.0.9",
+  "type": "commonjs",
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false,
+    "crypto": false
+  },
+  "version": "0.0.24",
   "bin": {
-    "xcli-fsd": "index.js"
+    "xcli-fsd": "bin/index.js"
   },
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "build": "rm -rf ./bin && npx tsc",
-    "start": "node ./bin/index.js",
-    "prettier": "npx prettier --write ./bin/**/*.js"
+    "build": "webpack && node ./script/formatOutFile.js",
+    "start": "node index.js"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
-    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "chalk": "^5.3.0",
+    "readline-sync": "^1.4.10",
     "@types/node": "^20.6.0",
     "@types/readline-sync": "^1.4.4",
     "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,5 @@
-import { preStart } from './start/preStart.js'
+#!/usr/bin/env node
+
+import { preStart } from './start/preStart'
 
 preStart()

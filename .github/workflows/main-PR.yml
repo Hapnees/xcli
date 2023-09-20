@@ -1,0 +1,20 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v3
+      - name: node
+        uses: actions/setup-node@v3
+        with:
+          registry-url: 'https://registry.npmjs.org'
+      - name: npm-install
+        run: npm install --frozen-lockfile
+      - name: build
+        run: npm run build

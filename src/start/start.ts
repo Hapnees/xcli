@@ -1,7 +1,6 @@
 import readLine from 'readline-sync'
-import { commands } from '../commands/command-list.js'
-import { commandPrint } from '../commands/command-print.js'
-import { actions } from '../actions/actions.js'
+import { commandPrint, commands } from '@commands'
+import { actions } from '../actions'
 
 export const start = (fsdPath: string) => {
   commandPrint(commands.general)

@@ -1,6 +1,6 @@
-import { createActions } from './action-list/createActions/createActions.js'
-import { start } from '../start/start.js'
-import { print } from '../print/print.js'
+import { createActions } from './action-list/createActions'
+import { start } from '../start/start'
+import { print } from '@utils'
 
 const createActionsVariants = ['1', 'c', 'create']
 

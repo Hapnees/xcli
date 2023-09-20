@@ -1,9 +1,8 @@
 import fs from 'fs'
 import chalk from 'chalk'
 import readLine from 'readline-sync'
-import { getResolve } from '../dirname/dirname.js'
-import { compareAndFilter } from '../utils/array.js'
-import { print } from '../print/print.js'
+import { getResolve, compareAndFilter } from '@helpers'
+import { print } from '@utils'
 
 export const init = (fsdPath: string) => {
   const resolve = getResolve(fsdPath)
@@ -37,7 +36,7 @@ export const init = (fsdPath: string) => {
   }
 
   const isNeedInit = readLine.question(
-    chalk.yellowBright('Initialize FSD architecture? (y/n): ')
+    chalk.yellowBright('Initialize FSD architecture? (y/n): '),
   )
 
   if (isNeedInit === 'n') {

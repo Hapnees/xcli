@@ -1,10 +1,9 @@
 import readLine from 'readline-sync'
-import { commands } from '../../../commands/command-list.js'
-import { commandPrint } from '../../../commands/command-print.js'
-import { CSCCute } from './sharedComponent/CSCCute.js'
-import { CSCute } from './slice/CSCute.js'
-import { start } from '../../../start/start.js'
-import { print } from '../../../print/print.js'
+import { commandPrint, commands } from '@commands'
+import { print } from '@utils'
+import { CSCCute } from './sharedComponent/CSCCute'
+import { CSCute } from './slice/CSCute'
+import { start } from '../../../start/start'
 
 const createSharedComponentVariants = ['1', 'sc', 'shared']
 const createSliceVariants = ['2', 's', 'slice']
