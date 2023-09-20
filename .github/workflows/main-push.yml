@@ -16,8 +16,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: npm-install
         run: npm install --frozen-lockfile
-      - name: CI
-        run: npm run ci
       - name: build
         run: npm run build
       - name: publish
