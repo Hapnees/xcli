@@ -1,15 +1,14 @@
 import fs from 'fs'
-import { getResolve } from '../../../../dirname/dirname.js'
-import { componentUITemplate } from '../../../../templates/componentUI.js'
-import { indexComponentTemplate } from '../../../../templates/indexComponent.js'
-import { print } from '../../../../print/print.js'
 import chalk from 'chalk'
+import { getResolve } from '@helpers'
+import { print } from '@utils'
+import { componentUITemplate, indexComponentTemplate } from '@templates'
 
 export const createSliceComponent = (
   fsdPath: string,
   layer: string,
   sliceName: string,
-  componentName: string
+  componentName: string,
 ) => {
   const pathToSlice = `${fsdPath}/${layer}/${sliceName}`
   const resolveUI = getResolve(`${pathToSlice}/ui`)
@@ -24,13 +23,13 @@ export const createSliceComponent = (
 
   fs.writeFileSync(
     resolveUI(componentName, `${componentName}.tsx`),
-    componentUITemplate(componentName)
+    componentUITemplate(componentName),
   )
 
   fs.writeFileSync(resolveUI(componentName, `${componentName}.module.scss`), '')
   fs.writeFileSync(
     resolveUI(componentName, 'index.ts'),
-    indexComponentTemplate(componentName)
+    indexComponentTemplate(componentName),
   )
 
   const uiFiles = fs.readdirSync(resolveUI())
@@ -45,12 +44,12 @@ export const createSliceComponent = (
   if (isExistUICollector) {
     fs.appendFileSync(
       resolveUI('index.ts'),
-      indexComponentTemplate(componentName)
+      indexComponentTemplate(componentName),
     )
   } else {
     fs.writeFileSync(
       resolveUI('index.ts'),
-      indexComponentTemplate(componentName)
+      indexComponentTemplate(componentName),
     )
   }
 
@@ -68,7 +67,7 @@ export const createSliceComponent = (
   }
 
   console.log(
-    chalk.greenBright(`\n${componentName} component successfully created\n`)
+    chalk.greenBright(`\n${componentName} component successfully created\n`),
   )
   return true
 }

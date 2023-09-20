@@ -1,5 +1,5 @@
 import readLine from 'readline-sync'
-import { createSharedComponent } from './createSharedComponent.js'
+import { createSharedComponent } from './createSharedComponent'
 
 export const CSCCute = (fsdPath: string) => {
   const componentName = readLine.question('Component name: ')

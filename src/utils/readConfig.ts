@@ -1,6 +1,6 @@
 import fs from 'fs'
-import { getResolve, dirname } from '../dirname/dirname.js'
-import { print } from '../print/print.js'
+import { getResolve, dirname } from '@helpers'
+import { print } from '@utils'
 
 interface IConfig {
   path: string
@@ -15,7 +15,7 @@ export const readConfig = (): IReadConfigReturn => {
   const resolve = getResolve(dirname)
   try {
     const config = JSON.parse(
-      fs.readFileSync(resolve('xcli.json'), { encoding: 'utf-8' })
+      fs.readFileSync(resolve('xcli.json'), { encoding: 'utf-8' }),
     )
 
     const path = config.path

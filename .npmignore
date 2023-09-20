@@ -1,5 +1,10 @@
 src
 fsd
+script
 .prettierrc
 .prettierignore
 xcli.json
+webpack.config.js
+tsconfig.json
+package.json
+.eslintrc

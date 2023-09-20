@@ -1,10 +1,10 @@
 import fs from 'fs'
-import { getResolve } from '../../../../dirname/dirname.js'
+import { getResolve } from '@helpers'
 
 export const createSlice = (
   fsdPath: string,
   layer: string,
-  sliceName: string
+  sliceName: string,
 ) => {
   const resolve = getResolve(fsdPath)
 

@@ -1,15 +1,17 @@
 import fs from 'fs'
 import chalk from 'chalk'
-import { print } from '../../../../print/print.js'
-import { getResolve } from '../../../../dirname/dirname.js'
-import { componentUITemplate } from '../../../../templates/componentUI.js'
-import { storyUITemplate } from '../../../../templates/storyUI.js'
-import { indexComponentTemplate } from '../../../../templates/indexComponent.js'
-import { CSCCute } from './CSCCute.js'
+import { print } from '@utils'
+import { getResolve } from '@helpers'
+import {
+  componentUITemplate,
+  storyUITemplate,
+  indexComponentTemplate,
+} from '@templates'
+import { CSCCute } from './CSCCute'
 
 export const createSharedComponent = (
   fsdPath: string,
-  componentName: string
+  componentName: string,
 ) => {
   const resolve = getResolve(fsdPath)
   const resolveUI = getResolve(`${fsdPath}/shared/ui`)
@@ -38,22 +40,22 @@ export const createSharedComponent = (
 
     fs.writeFileSync(
       resolveUI(componentName, `${componentName}.tsx`),
-      componentUITemplate(componentName)
+      componentUITemplate(componentName),
     )
 
     fs.writeFileSync(
       resolveUI(componentName, `${componentName}.module.scss`),
-      ''
+      '',
     )
 
     fs.writeFileSync(
       resolveUI(componentName, `${componentName}.stories.tsx`),
-      storyUITemplate(componentName)
+      storyUITemplate(componentName),
     )
 
     fs.writeFileSync(
       resolveUI(componentName, 'index.ts'),
-      indexComponentTemplate(componentName)
+      indexComponentTemplate(componentName),
     )
 
     const uiPath = fs.readdirSync(resolve('shared', 'ui'))
@@ -68,17 +70,17 @@ export const createSharedComponent = (
     if (isExistUICollector) {
       fs.appendFileSync(
         resolve('shared', 'ui', 'index.ts'),
-        indexComponentTemplate(componentName)
+        indexComponentTemplate(componentName),
       )
     } else {
       fs.writeFileSync(
         resolve('shared', 'ui', 'index.ts'),
-        indexComponentTemplate(componentName)
+        indexComponentTemplate(componentName),
       )
     }
 
     console.log(
-      chalk.greenBright(`\n${componentName} component successfully created\n`)
+      chalk.greenBright(`\n${componentName} component successfully created\n`),
     )
     return true
   } catch (e) {

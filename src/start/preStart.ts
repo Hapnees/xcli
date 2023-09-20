@@ -1,8 +1,8 @@
 import chalk from 'chalk'
-import { readConfig } from '../readConfig/readConfig.js'
-import { init } from '../init/init.js'
-import { dirname, resolve } from '../dirname/dirname.js'
-import { start } from './start.js'
+import { readConfig } from '@utils'
+import { init } from '../init/init'
+import { dirname, resolve } from '@helpers'
+import { start } from './start'
 
 export const preStart = () => {
   console.log(chalk.green('===> FSD SCRIPT <===\n'))

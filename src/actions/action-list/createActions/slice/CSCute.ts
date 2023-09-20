@@ -1,12 +1,12 @@
 import readLine from 'readline-sync'
-import { createSlice } from './createSlice.js'
-import { createSliceComponent } from './createSliceComponent.js'
-import { createActions } from '../createActions.js'
+import { createSlice } from './createSlice'
+import { createSliceComponent } from './createSliceComponent'
+import { createActions } from '../createActions'
 
 export const CSCute = (
   fsdPath: string,
   layerIncoming?: string,
-  sliceIncoming?: string
+  sliceIncoming?: string,
 ): boolean => {
   let layer = layerIncoming || ''
 
@@ -41,7 +41,7 @@ export const CSCute = (
     fsdPath,
     layer,
     sliceName,
-    componentName
+    componentName,
   )
 
   if (!iSuccess) {
